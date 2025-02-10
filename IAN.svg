@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <defs>
+    <!-- Gradien untuk background lingkaran -->
+    <radialGradient id="circleGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#005a82;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#003954;stop-opacity:1" />
+    </radialGradient>
+    
+    <!-- Gradien untuk huruf -->
+    <linearGradient id="letterGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#38b6ff;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#2596be;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e81b0;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Gradien untuk gelembung -->
+    <radialGradient id="bubbleGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#ffffff;stop-opacity:0.3" />
+    </radialGradient>
+  </defs>
+
+  <!-- Background circle -->
+  <circle cx="200" cy="200" r="190" fill="url(#circleGradient)" />
+  
+  <!-- Gelombang air background -->
+  <path d="M50,200 Q125,170 200,200 T350,200" 
+        fill="none" 
+        stroke="#0077be" 
+        stroke-width="5" 
+        opacity="0.3">
+    <animate attributeName="d" 
+             dur="3s" 
+             repeatCount="indefinite"
+             values="M50,200 Q125,170 200,200 T350,200;
+                     M50,200 Q125,230 200,200 T350,200;
+                     M50,200 Q125,170 200,200 T350,200"/>
+  </path>
+
+  <!-- Huruf-huruf yang melengkung -->
+  <g transform="translate(200,200) rotate(-30)">
+    <!-- I -->
+    <path d="M-100,0 L-80,0 L-80,60 L-100,60 Z" 
+          fill="url(#letterGradient)" 
+          stroke="#1e81b0" 
+          stroke-width="2"/>
+  </g>
+
+  <g transform="translate(200,200)">
+    <!-- A yang baru, lebih modern -->
+    <path d="M-20,40 L0,-40 L20,40 M-15,20 L15,20" 
+          fill="none"
+          stroke="url(#letterGradient)" 
+          stroke-width="20"
+          stroke-linecap="round"
+          stroke-linejoin="round"/>
+  </g>
+
+  <g transform="translate(200,200) rotate(30)">
+    <!-- N -->
+    <path d="M80,0 L80,60 L120,0 L120,60" 
+          fill="none" 
+          stroke="url(#letterGradient)" 
+          stroke-width="20" 
+          stroke-linejoin="round"/>
+  </g>
+
+  <!-- Gelembung-gelembung -->
+  <g>
+    <circle cx="150" cy="280" r="10" fill="url(#bubbleGradient)">
+      <animate attributeName="cy" 
+               from="280" to="120"
+               dur="3s" 
+               repeatCount="indefinite"/>
+    </circle>
+    <circle cx="250" cy="300" r="8" fill="url(#bubbleGradient)">
+      <animate attributeName="cy" 
+               from="300" to="140"
+               dur="4s" 
+               repeatCount="indefinite"/>
+    </circle>
+    <circle cx="200" cy="290" r="6" fill="url(#bubbleGradient)">
+      <animate attributeName="cy" 
+               from="290" to="130"
+               dur="3.5s" 
+               repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- Ikan-ikan kecil -->
+  <g transform="translate(280,200) scale(0.4)">
+    <path d="M0,0 C10,-10 20,-10 30,0 C20,10 10,10 0,0 Z" 
+          fill="#38b6ff"/>
+    <circle cx="25" cy="0" r="2" fill="#000"/>
+    <path d="M30,0 L40,-5 L40,5 Z" fill="#38b6ff"/>
+  </g>
+
+  <g transform="translate(120,220) scale(0.3) rotate(180)">
+    <path d="M0,0 C10,-10 20,-10 30,0 C20,10 10,10 0,0 Z" 
+          fill="#38b6ff"/>
+    <circle cx="25" cy="0" r="2" fill="#000"/>
+    <path d="M30,0 L40,-5 L40,5 Z" fill="#38b6ff"/>
+  </g>
+</svg>
